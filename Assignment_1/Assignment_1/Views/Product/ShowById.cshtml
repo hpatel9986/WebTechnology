@@ -1,0 +1,28 @@
+﻿@model Assignment_1.Models.Product
+
+<h2 class="text-center mb-4">Product Details</h2>
+
+<div class="card m-auto text-center" style="width: 24rem;">
+
+    <div class="card-header bg-dark text-white">
+        <h4>@Model.ProductName</h4>
+    </div>
+
+    <div class="d-flex justify-content-center p-3">
+        <img src="~/images/@Model.ImgUrl" style="width:200px" class="img-fluid" />
+    </div>
+
+    <div class="card-body">
+        <p>@Model.Description</p>
+    </div>
+
+    <div class="card-footer bg-primary text-white">
+        <h5>Price: $@Model.ProductPrice</h5>
+    </div>
+
+    <div class="card-footer bg-secondary text-white">
+        <a class="text-white text-decoration-none" href="/Product/AllProducts">
+           Back to All Products
+        </a>
+    </div>
+</div>

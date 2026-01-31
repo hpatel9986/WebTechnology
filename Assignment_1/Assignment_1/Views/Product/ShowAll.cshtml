@@ -1,0 +1,30 @@
+﻿@model List<Product>
+
+<h2>All Products</h2>
+
+<table class="table table-bordered table-striped text-center">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Price ($)</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductPrice</td>
+                <td><img src="~/images/@item.ImgUrl" style="width:80px"> </td>
+                <td>
+                    <a class="btn btn-primary"
+                       href="/Product/ShowById/@item.Id">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
