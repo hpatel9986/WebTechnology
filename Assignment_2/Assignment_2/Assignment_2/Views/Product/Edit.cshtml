@@ -1,0 +1,46 @@
+﻿@model Assignment_2.ViewModels.ProductViewModel
+
+<h1 class="text-center bg-warning">Edit Product</h1>
+
+<div class="border border-2 rounded rounded-2 w-75 m-auto p-3">
+    <form method="post" action="\Product\EditSave">
+
+        <input type="hidden" name="Product.Id" value="@Model.Product.Id" />
+
+        <div class="mb-3">
+            <label class="form-label">Product Name</label>
+            <input type="text" name="Product.ProductName" value="@Model.Product.ProductName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="text" name="Product.ProductPrice" value="@Model.Product.ProductPrice" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input type="text" name="Product.Description" value="@Model.Product.Description" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select name="Product.CategoryId" class="form-select">
+                @foreach (var c in Model.Categories)
+                {
+                    if (c.Id == Model.Product.CategoryId)
+                    {
+                        <option value="@c.Id" selected>@c.CategoryName</option>
+                    }
+                    else
+                    {
+                        <option value="@c.Id">@c.CategoryName</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="m-auto text-center">
+            <input type="submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
